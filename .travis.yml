@@ -7,4 +7,10 @@ jdk:
 
 install: ./gradlew --version
 
-script: ./gradlew --continue
+script: 
+  - ./gradlew --continue build
+  - if [ master == $TRAVIS_BRANCH -a $TRAVIS_PULL_REQUEST == false -a  ${REPOSITORY_USERNAME:=X} != X ]; then ./gradlew --continue release; fi
+
+cache:
+  directories:
+  - "$HOME/.gradle"

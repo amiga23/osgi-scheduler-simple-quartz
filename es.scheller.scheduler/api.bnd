@@ -1,0 +1,11 @@
+Export-Package: \
+	es.scheller.scheduler.api,\
+	es.scheller.ext.osgi.enroute.scheduler.api
+
+Require-Capability: \
+	compile-only
+
+
+-includeresource: {readme.md}
+
+Bundle-Version: 1.0.1.${tstamp}

@@ -1,0 +1,4 @@
+-includeresource: {readme.md}
+
+Bundle-Version: 1.0.1.${tstamp}
+Private-Package: es.scheller.scheduler.config.development

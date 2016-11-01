@@ -1,0 +1,13 @@
+-buildpath: \
+	osgi.enroute.base.api;version=1.0
+-testpath: \
+  biz.aQute.junit
+
+-sources: false
+
+# disabled in this case, because required for several different config bundles in same VM
+#Require-Capability: \
+#  compile-only
+
+Export-Package: es.scheller.air.config.api
+Bundle-Version: 1.0.2.${tstamp}

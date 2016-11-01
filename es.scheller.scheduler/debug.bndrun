@@ -1,0 +1,13 @@
+#
+# 	DEBUG LAUNCH SPECFICATION 
+#
+
+-include: ~es.scheller.scheduler.bndrun
+
+-runrequires.debug:  \
+	${debug-bundles}
+
+-runtrace: true
+
+-runbundles: \
+	${error;Resolve first}

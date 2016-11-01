@@ -1,0 +1,7 @@
+Private-Package:  \
+	es.scheller.scheduler.command
+	
+	
+-includeresource: {readme.md}
+
+Bundle-Version: 1.0.1.${tstamp}

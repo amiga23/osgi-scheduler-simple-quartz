@@ -1,0 +1,6 @@
+-buildpath: \
+	osgi.enroute.base.api,\
+	es.scheller.air.config.api;version=latest
+Private-Package: es.scheller.air.config.logging.development
+-sources: false
+Bundle-Version: 1.0.1.${tstamp}

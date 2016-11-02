@@ -1,5 +1,6 @@
 -buildpath: \
 	org.quartz-scheduler.quartz,\
 	es.scheller.air.config.api;version=latest,\
-	osgi.enroute.base.api
+	osgi.enroute.base.api,\
+	org.apache.felix.webconsole
 -sub: *.bnd

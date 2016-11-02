@@ -1,0 +1,6 @@
+
+Private-Package: es.scheller.scheduler.webconsole.plugin
+
+-includeresource: {readme.md}
+
+Bundle-Version: 1.0.0.${tstamp}

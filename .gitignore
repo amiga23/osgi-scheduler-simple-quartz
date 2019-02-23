@@ -2,6 +2,5 @@
 generated/
 enroute.zip
 .metadata
-/bin/
-/bin_test/
-cache/
+bin/
+bin_test/

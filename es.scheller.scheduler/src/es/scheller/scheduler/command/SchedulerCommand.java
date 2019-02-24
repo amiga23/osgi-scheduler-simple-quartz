@@ -1,23 +1,23 @@
 package es.scheller.scheduler.command;
 
+import org.apache.felix.service.command.CommandProcessor;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.scheller.scheduler.api.Scheduler;
-import osgi.enroute.debug.api.Debug;
 
 @Component( service = SchedulerCommand.class, property = {
-  Debug.COMMAND_SCOPE + "=cron",
-  Debug.COMMAND_FUNCTION + "=list",
-  Debug.COMMAND_FUNCTION + "=pauseAll",
-  Debug.COMMAND_FUNCTION + "=pauseJob",
-  Debug.COMMAND_FUNCTION + "=resumeAll",
-  Debug.COMMAND_FUNCTION + "=resumeJob",
-  Debug.COMMAND_FUNCTION + "=triggerJob",
-  Debug.COMMAND_FUNCTION + "=enable",
-  Debug.COMMAND_FUNCTION + "=standby"
+  CommandProcessor.COMMAND_SCOPE + "=cron",
+  CommandProcessor.COMMAND_FUNCTION + "=list",
+  CommandProcessor.COMMAND_FUNCTION + "=pauseAll",
+  CommandProcessor.COMMAND_FUNCTION + "=pauseJob",
+  CommandProcessor.COMMAND_FUNCTION + "=resumeAll",
+  CommandProcessor.COMMAND_FUNCTION + "=resumeJob",
+  CommandProcessor.COMMAND_FUNCTION + "=triggerJob",
+  CommandProcessor.COMMAND_FUNCTION + "=enable",
+  CommandProcessor.COMMAND_FUNCTION + "=standby"
 } )
 public class SchedulerCommand {
   

@@ -19,7 +19,7 @@ import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import osgi.enroute.scheduler.api.CronJob;
+import es.scheller.scheduler.api.CronJob;
 
 
 public class InternalJob implements Job {

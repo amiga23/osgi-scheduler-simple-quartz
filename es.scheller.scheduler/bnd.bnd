@@ -1,6 +1,15 @@
 -buildpath: \
 	org.quartz-scheduler.quartz,\
 	es.scheller.air.config.api;version=latest,\
-	osgi.enroute.base.api,\
-	org.apache.felix.webconsole
+	org.apache.felix.webconsole,\
+	slf4j.api,\
+	osgi.annotation;version=7.0,\
+	osgi.cmpn;version=7.0,\
+	osgi.core;version=7.0,\
+	org.osgi.service.http.whiteboard,\
+	org.apache.aries.jax.rs.whiteboard,\
+	org.apache.felix.javax.servlet,\
+	javax.servlet:servlet-api,\
+	javax.servlet-api,\
+	org.apache.felix.gogo.runtime
 -sub: *.bnd

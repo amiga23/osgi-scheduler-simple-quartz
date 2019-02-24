@@ -37,8 +37,8 @@ import org.quartz.impl.matchers.GroupMatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import es.scheller.scheduler.api.CronJob;
 import es.scheller.scheduler.api.Scheduler;
-import osgi.enroute.scheduler.api.CronJob;
 
 @ObjectClassDefinition( name = "Scheller :: Scheduler" )
 @interface Configuration {

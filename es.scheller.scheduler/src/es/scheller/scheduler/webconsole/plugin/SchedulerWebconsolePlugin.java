@@ -14,9 +14,9 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 
 import es.scheller.scheduler.api.Scheduler;
-import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
-
-@RequireWebServerExtender
+//import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
+//
+//@RequireWebServerExtender
 @Component( service = javax.servlet.Servlet.class, property={"felix.webconsole.label=Scheduler"})
 public class SchedulerWebconsolePlugin extends AbstractWebConsolePlugin {
 
@@ -52,7 +52,7 @@ public class SchedulerWebconsolePlugin extends AbstractWebConsolePlugin {
     response.getWriter().println( "<br/><pre>" );
     response.getWriter().println( schedulerService.status() );
     response.getWriter().println( "</pre>" );
-    response.flushBuffer();
+    response.getWriter().flush();
   }
 
 

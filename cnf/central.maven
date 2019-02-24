@@ -1,0 +1,5 @@
+# List repository contents using GAV coordinates
+
+org.quartz-scheduler:quartz:2.3.0
+org.apache.felix:org.apache.felix.logback:1.0.2
+org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.c3p0:0.9.1.2

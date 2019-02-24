@@ -1,67 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?>
-<repository increment="1478029392000" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<?xml version='1.0' encoding='UTF-8'?>
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Release" increment="1551044418000">
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="es.scheller.air.config.api"/>
+      <attribute name="osgi.identity" value="es.scheller.scheduler.command"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.2.201611011815"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="93ae45c8112910392f34df8dcfd5a4b2fd9226c6168ecb0d6c325e52302725e3"/>
-      <attribute name="url" value="es.scheller.air.config.api/es.scheller.air.config.api-1.0.2.jar"/>
-      <attribute name="size" type="Long" value="2446"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="version" value="1.0.2.201902242140" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="osgi.wiring.bundle" value="es.scheller.air.config.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.2.201611011815"/>
+      <attribute name="bundle-version" value="1.0.2.201902242140" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.command"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="osgi.wiring.host" value="es.scheller.air.config.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.2.201611011815"/>
+      <attribute name="bundle-version" value="1.0.2.201902242140" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.command"/>
     </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="osgi.wiring.package" value="es.scheller.air.config.api"/>
-      <attribute name="version" type="Version" value="0.0.0"/>
-      <attribute name="bundle-symbolic-name" value="es.scheller.air.config.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.2.201611011815"/>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" value="es.scheller.scheduler.command.SchedulerCommand" type="List&lt;String&gt;"/>
     </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="4880" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.command/es.scheller.scheduler.command-1.0.2.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="0C9D9B274CB460023D6E62C6C536E957640FD5BB690E2185850A9FF6277E37EF"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(&amp;(version&gt;=1.6.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=es.scheller.scheduler.api.Scheduler)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
   </resource>
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="es.scheller.air.config.logging.development"/>
+      <attribute name="osgi.identity" value="es.scheller.scheduler.config.development"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.1.201611011815"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="a95e43635997f0e67b699fb1586e1b1c4a601a235b3ee374aa506dd39733c397"/>
-      <attribute name="url" value="es.scheller.air.config.logging.development/es.scheller.air.config.logging.development-1.0.1.jar"/>
-      <attribute name="size" type="Long" value="4548"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="version" value="1.0.1.201611011943" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="osgi.wiring.bundle" value="es.scheller.air.config.logging.development"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011815"/>
+      <attribute name="bundle-version" value="1.0.1.201611011943" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.config.development"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="osgi.wiring.host" value="es.scheller.air.config.logging.development"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011815"/>
+      <attribute name="bundle-version" value="1.0.1.201611011943" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.config.development"/>
     </capability>
     <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="es.scheller.air.config.logging.development.LogConfigurator"/>
+      <attribute name="objectClass" value="java.lang.Object" type="List&lt;String&gt;"/>
     </capability>
-    <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="es.scheller.air.config.logging.development.LogConfigurator"/>
-      <directive name="uses" value="es.scheller.air.config.logging.development"/>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="6430" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.config.development/es.scheller.scheduler.config.development-1.0.1.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="3B5436EDCCD64437D62738CC1134D3ABF66F2D91DACD65DC26A8988AD3E8BBD7"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.air.config.api)(version&gt;=0.0.0)(!(version&gt;=1.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.air.config.api)(&amp;(version&gt;=0.0.0)(!(version&gt;=1.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.cm)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.cm)(&amp;(version&gt;=1.5.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.extender">
       <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
@@ -73,46 +79,298 @@
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="es.scheller.scheduler.examplejob"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.1.201902242140" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.1.201902242140" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.examplejob"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.1.201902242140" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.examplejob"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" value="es.scheller.scheduler.api.CronJob" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="6258" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.examplejob/es.scheller.scheduler.examplejob-1.0.1.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="57EA191C1464384FBE9B6EA4A3AA6009B89320DF8FCFDBD942483EEB43639C93"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(&amp;(version&gt;=1.6.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="es.scheller.scheduler.webconsole.plugin"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0.201902242140" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0.201902242140" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.webconsole.plugin"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0.201902242140" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.webconsole.plugin"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" value="javax.servlet.Servlet" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="5417" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.webconsole.plugin/es.scheller.scheduler.webconsole.plugin-1.0.0.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="335B8AA856E9455DFAE317B1A3D2463BA9DD73D25382D727D696E14F7C1AE100"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(&amp;(version&gt;=2.1.0)(!(version&gt;=3.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.http)(&amp;(version&gt;=2.1.0)(!(version&gt;=3.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.felix.webconsole)(&amp;(version&gt;=3.3.0)(!(version&gt;=4.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(&amp;(version&gt;=1.9.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
     <requirement namespace="osgi.service">
-      <directive name="filter" value="(objectClass=org.osgi.service.cm.ConfigurationAdmin)"/>
+      <directive name="filter" value="(objectClass=es.scheller.scheduler.api.Scheduler)"/>
       <directive name="effective" value="active"/>
     </requirement>
     <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="es.scheller.scheduler.provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.1.201611011837" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.1.201611011837" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.provider"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.1.201611011837" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.provider"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="es.scheller.scheduler.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.osgi.util.promise"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="osgi.enroute.scheduler.api"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" value="es.scheller.scheduler.api.Scheduler" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="33148" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.provider/es.scheller.scheduler.provider-1.0.1.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="B5EA20F038365A15A3A90823FB40014AAD3B65B1C373563F08EDCBAFEA34135D"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.management))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(&amp;(version&gt;=1.8.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.promise)(&amp;(version&gt;=1.0.0)(!(version&gt;=1.1.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(&amp;(version&gt;=1.5.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz)(&amp;(version&gt;=2.2.0)(!(version&gt;=3.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl)(&amp;(version&gt;=2.2.0)(!(version&gt;=3.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl.matchers)(&amp;(version&gt;=2.2.0)(!(version&gt;=3.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(&amp;(version&gt;=1.7.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=osgi.enroute.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
       <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=osgi.enroute.scheduler.api.CronJob)"/>
       <directive name="effective" value="active"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="es.scheller.scheduler.provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="2.0.0.201902242140" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="2.0.0.201902242140" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.provider"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="2.0.0.201902242140" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.provider"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="es.scheller.scheduler.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="2.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="osgi.enroute.scheduler.api"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" value="es.scheller.scheduler.api.Scheduler" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="20748" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.provider/es.scheller.scheduler.provider-2.0.0.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="80392A010B2E866A9AB876610E986F6CF34772A27E2F469DF19E566A2ED57D4F"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=1.1.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.management))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(&amp;(version&gt;=1.9.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(&amp;(version&gt;=1.5.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz)(&amp;(version&gt;=2.3.0)(!(version&gt;=3.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl)(&amp;(version&gt;=2.3.0)(!(version&gt;=3.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl.matchers)(&amp;(version&gt;=2.3.0)(!(version&gt;=3.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(&amp;(version&gt;=1.6.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=es.scheller.scheduler.api.CronJob)"/>
+      <directive name="effective" value="active"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="es.scheller.scheduler.examplejob"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0.201611011943" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0.201611011943" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.examplejob"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0.201611011943" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.examplejob"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" value="osgi.enroute.scheduler.api.CronJob" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="6116" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.examplejob/es.scheller.scheduler.examplejob-1.0.0.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="C24F4709F1C007FD22BFC26CCC6A09DEA4137FF4A51A795B6AC2986BD47056A4"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(&amp;(version&gt;=1.7.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=osgi.enroute.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
   </resource>
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="es.scheller.scheduler.api"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.1.201611011943"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="6b92a5dcf42ded010de4c494ddfe238773fc28a8c913a9e59b8fbade2f005f57"/>
-      <attribute name="url" value="es.scheller.scheduler.api/es.scheller.scheduler.api-1.0.1.jar"/>
-      <attribute name="size" type="Long" value="3065"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="version" value="1.1.0.201902242140" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.1.0.201902242140" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011943"/>
     </capability>
     <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.1.0.201902242140" type="Version"/>
       <attribute name="osgi.wiring.host" value="es.scheller.scheduler.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011943"/>
     </capability>
     <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="es.scheller.scheduler.api"/>
-      <attribute name="version" type="Version" value="1.0.0"/>
-      <attribute name="bundle-symbolic-name" value="es.scheller.scheduler.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011943"/>
     </capability>
     <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="1.1.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="es.scheller.ext.osgi.enroute.scheduler.api"/>
-      <attribute name="version" type="Version" value="1.0.1"/>
-      <attribute name="bundle-symbolic-name" value="es.scheller.scheduler.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011943"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="4139" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.api/es.scheller.scheduler.api-1.1.0.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="B377B992D6C3221EC4E8BD56A0D58A161383E23DEE0A33456BF90538670DE06D"/>
     </capability>
     <requirement namespace="compile-only"/>
     <requirement namespace="osgi.ee">
@@ -121,323 +379,213 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="es.scheller.scheduler.command"/>
+      <attribute name="osgi.identity" value="es.scheller.air.config.api"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.1.201611011943"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="2dda65f5684a79b2c2f81dc14f456283d2b5791b9271e167813c6f5d007632e2"/>
-      <attribute name="url" value="es.scheller.scheduler.command/es.scheller.scheduler.command-1.0.1.jar"/>
-      <attribute name="size" type="Long" value="4718"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="version" value="1.0.2.201611011815" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.command"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011943"/>
+      <attribute name="bundle-version" value="1.0.2.201611011815" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.air.config.api"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.command"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011943"/>
+      <attribute name="bundle-version" value="1.0.2.201611011815" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.air.config.api"/>
     </capability>
-    <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="es.scheller.scheduler.command.SchedulerCommand"/>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="0.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="es.scheller.air.config.api"/>
     </capability>
-    <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="es.scheller.scheduler.command.SchedulerCommand"/>
-      <attribute name="osgi.command.function" type="List&lt;String&gt;" value="list,pauseAll,pauseJob,resumeAll,resumeJob,triggerJob,enable,standby"/>
-      <attribute name="osgi.command.scope" value="cron"/>
-      <directive name="uses" value="es.scheller.scheduler.command"/>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="2446" type="Long"/>
+      <attribute name="url" value="es.scheller.air.config.api/es.scheller.air.config.api-1.0.2.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="93AE45C8112910392F34DF8DCFD5A4B2FD9226C6168ECB0D6C325E52302725E3"/>
     </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.service">
-      <directive name="filter" value="(objectClass=es.scheller.scheduler.api.Scheduler)"/>
-      <directive name="effective" value="active"/>
-    </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.service">
-      <directive name="filter" value="(objectClass=es.scheller.scheduler.api.Scheduler)"/>
-      <directive name="effective" value="active"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
-      <directive name="effective" value="active"/>
     </requirement>
   </resource>
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="es.scheller.scheduler.config.development"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.1.201611011943"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="3b5436edccd64437d62738cc1134d3abf66f2d91dacd65dc26a8988ad3e8bbd7"/>
-      <attribute name="url" value="es.scheller.scheduler.config.development/es.scheller.scheduler.config.development-1.0.1.jar"/>
-      <attribute name="size" type="Long" value="6430"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="version" value="1.0.2.201902242140" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.2.201902242140" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.config.development"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011943"/>
     </capability>
     <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.2.201902242140" type="Version"/>
       <attribute name="osgi.wiring.host" value="es.scheller.scheduler.config.development"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011943"/>
     </capability>
     <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="java.lang.Object"/>
+      <attribute name="objectClass" value="java.lang.Object" type="List&lt;String&gt;"/>
     </capability>
-    <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="java.lang.Object"/>
-      <attribute name="osgi.command.function" value="add"/>
-      <attribute name="osgi.command.scope" value="cron"/>
-      <directive name="uses" value="java.lang"/>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="5333" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.config.development/es.scheller.scheduler.config.development-1.0.2.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="682D771D5628C9682A4422AF1D1D107394F939987F2A8A879E668436B114CD91"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.air.config.api)(version&gt;=0.0.0)(!(version&gt;=1.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.cm)(&amp;(version&gt;=1.6.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.cm)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(&amp;(version&gt;=1.6.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.service">
       <directive name="filter" value="(objectClass=org.osgi.service.cm.ConfigurationAdmin)"/>
       <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.service">
-      <directive name="filter" value="(objectClass=org.osgi.service.cm.ConfigurationAdmin)"/>
-      <directive name="effective" value="active"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
-      <directive name="effective" value="active"/>
     </requirement>
   </resource>
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="es.scheller.scheduler.examplejob"/>
+      <attribute name="osgi.identity" value="es.scheller.scheduler.command"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.201611011943"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="c24f4709f1c007fd22bfc26ccc6a09dea4137ff4a51a795b6ac2986bd47056a4"/>
-      <attribute name="url" value="es.scheller.scheduler.examplejob/es.scheller.scheduler.examplejob-1.0.0.jar"/>
-      <attribute name="size" type="Long" value="6116"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="version" value="1.0.1.201611011943" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.examplejob"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201611011943"/>
+      <attribute name="bundle-version" value="1.0.1.201611011943" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.command"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.examplejob"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201611011943"/>
+      <attribute name="bundle-version" value="1.0.1.201611011943" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.command"/>
     </capability>
     <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="osgi.enroute.scheduler.api.CronJob"/>
+      <attribute name="objectClass" value="es.scheller.scheduler.command.SchedulerCommand" type="List&lt;String&gt;"/>
     </capability>
-    <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="osgi.enroute.scheduler.api.CronJob"/>
-      <attribute name="cron" value="23 * * * * ? *"/>
-      <attribute name="description" value="An Example Job for testing."/>
-      <attribute name="id" value="1"/>
-      <directive name="uses" value="osgi.enroute.scheduler.api"/>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="4718" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.command/es.scheller.scheduler.command-1.0.1.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="2DDA65F5684A79B2C2F81DC14F456283D2B5791B9271E167813C6F5D007632E2"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=osgi.enroute.scheduler.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(&amp;(version&gt;=1.7.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.extender">
       <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=es.scheller.scheduler.api.Scheduler)"/>
+      <directive name="effective" value="active"/>
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="es.scheller.air.config.logging.development"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.1.201611011815" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.1.201611011815" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.air.config.logging.development"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.1.201611011815" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.air.config.logging.development"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" value="es.scheller.air.config.logging.development.LogConfigurator" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="4548" type="Long"/>
+      <attribute name="url" value="es.scheller.air.config.logging.development/es.scheller.air.config.logging.development-1.0.1.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="A95E43635997F0E67B699FB1586E1B1C4A601A235B3EE374AA506DD39733C397"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.air.config.api)(&amp;(version&gt;=0.0.0)(!(version&gt;=1.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.cm)(&amp;(version&gt;=1.5.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
     <requirement namespace="osgi.extender">
       <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.osgi.service.cm.ConfigurationAdmin)"/>
       <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
   </resource>
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="es.scheller.scheduler.provider"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.1.201611011837"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="b5ea20f038365a15a3a90823fb40014aad3b65b1c373563f08edcbafea34135d"/>
-      <attribute name="url" value="es.scheller.scheduler.provider/es.scheller.scheduler.provider-1.0.1.jar"/>
-      <attribute name="size" type="Long" value="33148"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="version" value="1.0.2.201611011943" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.2.201611011943" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.provider"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011837"/>
     </capability>
     <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.2.201611011943" type="Version"/>
       <attribute name="osgi.wiring.host" value="es.scheller.scheduler.provider"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011837"/>
     </capability>
     <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="es.scheller.scheduler.api"/>
-      <attribute name="version" type="Version" value="1.0.0"/>
-      <attribute name="bundle-symbolic-name" value="es.scheller.scheduler.provider"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011837"/>
     </capability>
     <capability namespace="osgi.wiring.package">
-      <attribute name="osgi.wiring.package" value="osgi.enroute.scheduler.api"/>
-      <attribute name="version" type="Version" value="1.0.0"/>
-      <attribute name="bundle-symbolic-name" value="es.scheller.scheduler.provider"/>
-      <attribute name="bundle-version" type="Version" value="1.0.1.201611011837"/>
       <directive name="uses" value="org.osgi.util.promise"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="osgi.enroute.scheduler.api"/>
     </capability>
     <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="es.scheller.scheduler.api.Scheduler"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="es.scheller.scheduler.api.Scheduler"/>
-      <attribute name="activeHost" value="disabled"/>
-      <directive name="uses" value="es.scheller.scheduler.api"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.promise)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz)(version&gt;=2.2.0)(!(version&gt;=3.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl)(version&gt;=2.2.0)(!(version&gt;=3.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl.matchers)(version&gt;=2.2.0)(!(version&gt;=3.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=osgi.enroute.scheduler.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.service">
-      <directive name="filter" value="(objectClass=osgi.enroute.scheduler.api.CronJob)"/>
-      <directive name="effective" value="active"/>
-      <directive name="resolution" value="optional"/>
-      <directive name="cardinality" value="multiple"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.service">
-      <directive name="filter" value="(objectClass=osgi.enroute.scheduler.api.CronJob)"/>
-      <directive name="resolution" value="optional"/>
-      <directive name="cardinality" value="multiple"/>
-      <directive name="effective" value="active"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
-      <directive name="effective" value="active"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="es.scheller.scheduler.provider"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.2.201611011943"/>
+      <attribute name="objectClass" value="es.scheller.scheduler.api.Scheduler" type="List&lt;String&gt;"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="ddbf96021a2135009c77fc626673cafffc9c9dee6c055f48210d238f982fa355"/>
+      <attribute name="size" value="33784" type="Long"/>
       <attribute name="url" value="es.scheller.scheduler.provider/es.scheller.scheduler.provider-1.0.2.jar"/>
-      <attribute name="size" type="Long" value="33784"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.provider"/>
-      <attribute name="bundle-version" type="Version" value="1.0.2.201611011943"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.provider"/>
-      <attribute name="bundle-version" type="Version" value="1.0.2.201611011943"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="osgi.wiring.package" value="es.scheller.scheduler.api"/>
-      <attribute name="version" type="Version" value="1.0.0"/>
-      <attribute name="bundle-symbolic-name" value="es.scheller.scheduler.provider"/>
-      <attribute name="bundle-version" type="Version" value="1.0.2.201611011943"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="osgi.wiring.package" value="osgi.enroute.scheduler.api"/>
-      <attribute name="version" type="Version" value="1.0.0"/>
-      <attribute name="bundle-symbolic-name" value="es.scheller.scheduler.provider"/>
-      <attribute name="bundle-version" type="Version" value="1.0.2.201611011943"/>
-      <directive name="uses" value="org.osgi.util.promise"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="es.scheller.scheduler.api.Scheduler"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <attribute name="objectClass" type="List&lt;String&gt;" value="es.scheller.scheduler.api.Scheduler"/>
-      <attribute name="activeHost" value="disabled"/>
-      <directive name="uses" value="es.scheller.scheduler.api"/>
+      <attribute name="osgi.content" value="DDBF96021A2135009C77FC626673CAFFFC9C9DEE6C055F48210D238F982FA355"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=es.scheller.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.management))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(&amp;(version&gt;=1.8.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.promise)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.promise)(&amp;(version&gt;=1.0.0)(!(version&gt;=1.1.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(&amp;(version&gt;=1.5.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz)(version&gt;=2.2.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz)(&amp;(version&gt;=2.2.0)(!(version&gt;=3.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl)(version&gt;=2.2.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl)(&amp;(version&gt;=2.2.0)(!(version&gt;=3.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl.matchers)(version&gt;=2.2.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.quartz.impl.matchers)(&amp;(version&gt;=2.2.0)(!(version&gt;=3.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(&amp;(version&gt;=1.7.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=osgi.enroute.scheduler.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=osgi.enroute.scheduler.api)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
     </requirement>
     <requirement namespace="osgi.extender">
       <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
@@ -451,15 +599,38 @@
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
-    <requirement namespace="osgi.service">
-      <directive name="filter" value="(objectClass=osgi.enroute.scheduler.api.CronJob)"/>
-      <directive name="resolution" value="optional"/>
-      <directive name="cardinality" value="multiple"/>
-      <directive name="effective" value="active"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
-      <directive name="effective" value="active"/>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="es.scheller.scheduler.api"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.1.201611011943" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.1.201611011943" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="es.scheller.scheduler.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.1.201611011943" type="Version"/>
+      <attribute name="osgi.wiring.host" value="es.scheller.scheduler.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="es.scheller.scheduler.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="1.0.1" type="Version"/>
+      <attribute name="osgi.wiring.package" value="es.scheller.ext.osgi.enroute.scheduler.api"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="3065" type="Long"/>
+      <attribute name="url" value="es.scheller.scheduler.api/es.scheller.scheduler.api-1.0.1.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="6B92A5DCF42DED010DE4C494DDFE238773FC28A8C913A9E59B8FBADE2F005F57"/>
+    </capability>
+    <requirement namespace="compile-only"/>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
   </resource>
 </repository>

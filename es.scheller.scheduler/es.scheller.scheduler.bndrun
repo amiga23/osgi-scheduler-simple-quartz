@@ -42,11 +42,7 @@ Bundle-SymbolicName:		es.scheller.scheduler.launch
 	org.apache.felix.gogo.shell;version='[1.0.0,1.0.1)',\
 	org.apache.felix.inventory;version='[1.0.4,1.0.5)',\
 	org.apache.felix.webconsole.plugins.ds;version='[2.0.8,2.0.9)',\
-	es.scheller.scheduler.config.development;version=snapshot,\
-	org.apache.felix.webconsole.plugins.memoryusage;version='[1.0.8,1.0.9)',\
-	org.apache.felix.webconsole.plugins.scriptconsole;version='[1.0.2,1.0.3)',\
-	es.scheller.ext.json;version=snapshot,\
-	groovy-all;version='[2.4.0,2.4.1)'
+	es.scheller.scheduler.config.development;version=snapshot
 -runee: JavaSE-1.8
 -runfw: org.eclipse.osgi;version=3.13
 -runprovidedcapabilities: ${native_capability}
